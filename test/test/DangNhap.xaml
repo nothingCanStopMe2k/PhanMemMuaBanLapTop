@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="test.DangNhap"
+             BackgroundImage="bg.jpg">
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="Đăng nhập" TextColor="#fff" Margin="40, 10, 10, 10" FontSize="25"/>
+            <Frame CornerRadius="5" BackgroundColor="Azure" Margin="15, 0,15,0">
+                <StackLayout>
+                    <Entry Margin="0,0,5,0" Placeholder="Email" PlaceholderColor="#999"/>
+                    <Entry Placeholder="Mật khẩu" IsPassword="True" PlaceholderColor="#999"/>
+                </StackLayout>
+            </Frame>
+            <Label Margin="0,0,15,0" Text="Quên mật khẩu?" TextColor="Azure" TextDecorations="Underline" FontSize="15" HorizontalTextAlignment="End"/>
+            <Button Margin="15" Text="Đăng nhập" BackgroundColor="#66999A" TextColor="Azure"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

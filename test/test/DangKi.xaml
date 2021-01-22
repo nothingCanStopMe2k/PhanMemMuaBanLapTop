@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="test.DangKi"
+             BackgroundImage="bg.jpg"
+             NavigationPage.HasNavigationBar="false">
+    <ContentPage.Content>
+        <ScrollView Padding="0, 50">
+            <StackLayout Margin="40, 0" Spacing="10">
+                <Label Text="LapTop" FontAttributes="Bold" FontSize="45" TextColor="White" Margin="0,0,0,20" HorizontalTextAlignment="Center"/>
+                <Label  Margin="0,-30,0,0"   Text="Trung tâm mua bán laptop hàng đầu" TextColor="#fff" HorizontalTextAlignment="Center" FontAttributes="Bold" />
+                <Grid Margin="0, 170,0 ,0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <Button Grid.Row="0" Grid.Column="0" Text="Tiếp tục với Facebook" TextColor="#fff" BackgroundColor="#3B5999" Margin="0,0,0,-5" />
+                    <Label Grid.Row="1" Grid.Column="0" Text="HOẶC" TextColor="#fff" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" FontSize="12" FontAttributes="Bold"/>
+                    <Button x:Name="DangKiVoiEmail" Clicked="DangKiVoiEmail_Clicked" Grid.Row="2" Grid.Column="0" Text="Đăng kí với Email" TextColor="#fff" BackgroundColor="#66999A" Margin="0,-5,0,0"  />
+                </Grid>
+                <Label Text="Tìm hiểu chính sách của chúng tôi"
+                   Opacity="0.8"
+                   Margin="0,0,0,20"
+                   VerticalOptions="End"
+                   FontSize="Small"
+                   HorizontalTextAlignment="Center"
+                   TextColor="#fff"
+                   TextDecorations="Underline"/>
+                <Button x:Name="clickDangNhap" Clicked="ClickDangNhap_Clicked" Margin="0,120,0,0" Text="Bạn đã có tài khoản? Đăng Nhập" TextColor="#fff" BackgroundColor="Transparent" BorderColor="#fff" BorderWidth="1"/>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

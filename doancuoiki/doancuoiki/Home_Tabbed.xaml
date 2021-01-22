@@ -1,0 +1,75 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="doancuoiki.Home_Tabbed"
+      
+             BackgroundImage="bg2.jpg">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <OnPlatform x:TypeArguments="x:String" x:Key="FontSecure">
+                <On Platform="Android" Value="FSSiruca.ttf#Open Sans"/>
+            </OnPlatform>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <ContentPage.Content>
+        <StackLayout>
+        <Grid VerticalOptions="FillAndExpand">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <StackLayout Grid.Row="1" Margin="0,20,0,20">
+                <Label x:Name="lstChao" Text="Chúc bạn một ngày tốt lành :))" TextColor="#fff" VerticalOptions="Center" HorizontalOptions="Center" FontSize="25"/>
+            </StackLayout>
+            <Frame Grid.Row="2" HasShadow="True" CornerRadius="10" Margin="20, 20, 20, 0" Padding="0, 10, 0, 10" VerticalOptions="Start">
+                
+                <Grid HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+                    <Label Text="Danh sách tòa: " Grid.Column="0" Grid.Row="0" Margin="15, 5, 0, 0" FontSize="18" FontAttributes="Bold" />
+                    <StackLayout Grid.Column="0" Grid.Row="1" Orientation="Vertical" Spacing="10" HorizontalOptions="CenterAndExpand" Padding="10">
+
+                        <Button x:Name="lstTA" Clicked="LstTA_Clicked" Text="Tòa A" FontFamily="{StaticResource FontSecure}" FontAttributes="Bold" BackgroundColor="Azure" Padding="40, 20, 40, 20" BorderWidth="2" BorderColor="Blue"/>
+                    </StackLayout>
+                    <StackLayout Grid.Column="1" Grid.Row="1" Orientation="Vertical" Spacing="10" HorizontalOptions="CenterAndExpand" Padding="10">
+                        <Button x:Name="lstTB" Clicked="LstTB_Clicked" Text="Tòa B" FontFamily="{StaticResource FontSecure}" FontAttributes="Bold" BackgroundColor="Azure" Padding="40, 20, 40, 20" BorderWidth="2" BorderColor="Blue"/>
+                    </StackLayout>
+                    <StackLayout Grid.Column="0" Grid.Row="2" Orientation="Vertical" Spacing="10" HorizontalOptions="CenterAndExpand"  Padding="10">
+                        <Button x:Name="lstTC" Clicked="LstTC_Clicked" Text="Tòa C" FontFamily="{StaticResource FontSecure}" FontAttributes="Bold"  BackgroundColor="Azure" Padding="40, 20, 40, 20" BorderWidth="2" BorderColor="Blue"/>
+                    </StackLayout>
+                    <StackLayout Grid.Column="1" Grid.Row="2" Orientation="Vertical" Spacing="10" HorizontalOptions="CenterAndExpand"  Padding="10">
+                        <Button x:Name="lstTE" Clicked="LstTE_Clicked" Text="Tòa E" FontFamily="{StaticResource FontSecure}" FontAttributes="Bold"  BackgroundColor="Azure" Padding="40, 20, 40, 20" BorderWidth="2" BorderColor="Blue"/>
+                    </StackLayout>
+                </Grid>
+
+            </Frame>
+            <Frame Grid.Row="3" HasShadow="True" CornerRadius="10" Margin="20, 40, 20, 0" Padding="0, 10, 0, 10" VerticalOptions="Start">
+                <Label Text="Thông báo" Margin="15, 5, 0, 0" FontSize="18" FontAttributes="Bold" />
+
+            </Frame>
+        </Grid>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Button x:Name="navhome" Text="Trang chủ" Grid.Row="0" Grid.Column="0"/>
+                <Button x:Name="navprofile" Text="Cá nhân" Grid.Row="0" Grid.Column="1" Clicked="navprofile_Clicked"/>
+                <Button x:Name="navnofi" Text="Thông báo" Grid.Row="0" Grid.Column="2" Clicked="navnofi_Clicked"/>
+            </Grid>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
