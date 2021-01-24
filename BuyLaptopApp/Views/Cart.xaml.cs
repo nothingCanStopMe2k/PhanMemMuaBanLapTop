@@ -30,10 +30,14 @@ namespace BuyLaptopApp.Views
         public long tinhTongGia(List<Laptop> carts)
         {
             long tong = 0;
-            foreach (Laptop cart in carts)
+            if(carts != null)
             {
-                tong += cart.GIA;
+                foreach (Laptop cart in carts)
+                {
+                    tong += cart.GIA;
+                }
             }
+            
             return tong;
         }
 
