@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="BuyLaptopApp.Views.Detail">
+    <ContentPage.Content>
+        <StackLayout>
+            <Frame BackgroundColor="#2196F3" Padding="24" CornerRadius="0">
+                <Label Text="Chi tiết sản phẩm" HorizontalTextAlignment="Center" TextColor="White" FontSize="36"/>
+            </Frame>
+            <ListView x:Name="ctsp" RowHeight="500">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition/>
+                                    <RowDefinition/>
+                                    <RowDefinition/>
+                                    <RowDefinition/>
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="2*"/>
+                                </Grid.ColumnDefinitions>
+                                <Image Source="{Binding HINH}" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3"/>
+                                <Label Text="Tên:" Grid.Row="1" Grid.Column="0" VerticalTextAlignment="Center"/>
+                                <Label Text="{Binding TEN}" Grid.Row="1" Grid.Column="1" VerticalTextAlignment="Center"/>
+                                <Label Text="Mô tả:" Grid.Row="2" Grid.Column="0" VerticalTextAlignment="Center"/>
+                                <Label Text="{Binding MOTA}" Grid.Row="2" Grid.Column="1" VerticalTextAlignment="Center"/>
+                                <Label Text="Giá:" Grid.Row="3" Grid.Column="0" VerticalTextAlignment="Center"/>
+                                <Label Text="{Binding GIA}" Grid.Row="3" Grid.Column="1" VerticalTextAlignment="Center"/>
+                            </Grid>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            <Button x:Name="btnAddtoCart" Text="Thêm vào giỏ hàng" Clicked="btnAddtoCart_Clicked"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

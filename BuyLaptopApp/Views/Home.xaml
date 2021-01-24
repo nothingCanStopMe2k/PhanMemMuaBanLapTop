@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="BuyLaptopApp.Views.Home">
+    <ContentPage.Content>
+        <StackLayout>
+            <Frame BackgroundColor="#2196F3" Padding="24" CornerRadius="0">
+                <Label Text="Trang chủ" HorizontalTextAlignment="Center" TextColor="White" FontSize="36" Grid.Row="1" Grid.Column="0"/>
+            </Frame>
+            
+            <Label Text="Chọn nhà sản xuất:"/>
+            <ListView x:Name="lstnsx" ItemSelected="lstnsx_ItemSelected">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition/>
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="2*"/>
+                                </Grid.ColumnDefinitions>
+                                <Image Source="{Binding HINH}" Grid.Row="0" Grid.Column="0"/>
+                                <Label Text="{Binding TEN}" Grid.Row="0" Grid.Column="1" VerticalTextAlignment="Center"/>
+                            </Grid>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            <ImageButton x:Name="btnCart" Source="shoppingcart.png" HeightRequest="50" Clicked="btnCart_Clicked"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

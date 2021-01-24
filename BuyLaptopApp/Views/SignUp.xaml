@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="BuyLaptopApp.Views.SignUp">
+    <ContentPage.Content>
+        <StackLayout>
+            <Frame BackgroundColor="#2196F3" Padding="24" CornerRadius="0">
+                <Label Text="Đăng ký" HorizontalTextAlignment="Center" TextColor="White" FontSize="36"/>
+            </Frame>
+            <Label Text="Số điện thoại" FontSize="Title" Padding="30,10,30,10"/>
+            <Entry x:Name="txtphone"/>
+            <Label Text="Họ tên" FontSize="Title" Padding="30,10,30,10"/>
+            <Entry x:Name="txtname"/>
+            <Label Text="Mật khẩu" FontSize="Title" Padding="30,10,30,10"/>
+            <Entry x:Name="txtpass" IsPassword="True"/>
+            <Button x:Name="btndk" Text="Đăng ký"/>
+            <Button x:Name="btnNavlg" Text="Đăng nhập" Clicked="btnNavlg_Clicked"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
