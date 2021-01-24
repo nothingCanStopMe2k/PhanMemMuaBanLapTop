@@ -7,7 +7,7 @@ namespace BuyLaptopApp.Models
 {
     public class Laptop
     {
-        [PrimaryKey, AutoIncrement]
+        [PrimaryKey]
         public string MALT { get; set; }
         public string MANSX { get; set; }
         public string TEN { get; set; }
