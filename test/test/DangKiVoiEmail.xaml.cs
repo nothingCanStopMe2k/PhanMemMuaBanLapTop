@@ -16,5 +16,13 @@ namespace test
         {
             InitializeComponent();
         }
+
+        private void Button_Clicked(object sender, EventArgs e)
+        {
+            string Ten = lstTen.Text;
+            string Email = lstEmail.Text;
+            string MatKhau = lstMatKhau.Text;
+            Navigation.PushAsync(new DangNhap(Ten, Email, MatKhau));
+        }
     }
 }

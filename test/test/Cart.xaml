@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="test.Cart">
+    <ContentPage.Content>
+        <StackLayout>
+            <Frame BackgroundColor="#2196F3" Padding="24" CornerRadius="0">
+                <Label Text="Giỏ hàng" HorizontalTextAlignment="Center" TextColor="White" FontSize="36"/>
+            </Frame>
+            <Label Text="Xóa sản phẩm:"/>
+            <ListView x:Name="lstcart" ItemSelected="Lstcart_ItemSelected">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition/>
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+                                <Image Source="{Binding HINH}" Grid.Row="0" Grid.Column="0"/>
+                                <Label Text="{Binding TEN}" Grid.Row="0" Grid.Column="1" VerticalTextAlignment="Center"/>
+                                <Label Text="{Binding GIA}" Grid.Row="0" Grid.Column="2" VerticalTextAlignment="Center"/>
+                            </Grid>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            <Grid HeightRequest="300">
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Label Text="Tổng:" Grid.Row="0" Grid.Column="0"/>
+                <Label x:Name="sum" Grid.Row="0" Grid.Column="2"/>
+            </Grid>
+            <Button x:Name="btnbook" Text="Đặt hàng"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

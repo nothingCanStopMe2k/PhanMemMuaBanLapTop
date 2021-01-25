@@ -6,14 +6,15 @@
     <ContentPage.Content>
         <StackLayout>
             <Label Text="Đăng nhập" TextColor="#fff" Margin="40, 10, 10, 10" FontSize="25"/>
+            
             <Frame CornerRadius="5" BackgroundColor="Azure" Margin="15, 0,15,0">
                 <StackLayout>
-                    <Entry Margin="0,0,5,0" Placeholder="Email" PlaceholderColor="#999"/>
-                    <Entry Placeholder="Mật khẩu" IsPassword="True" PlaceholderColor="#999"/>
+                    <Entry x:Name="lstEmail" Margin="0,0,5,0" Placeholder="Email" PlaceholderColor="#999"/>
+                    <Entry x:Name="lstMatKhau" Placeholder="Mật khẩu" IsPassword="True" PlaceholderColor="#999"/>
                 </StackLayout>
             </Frame>
             <Label Margin="0,0,15,0" Text="Quên mật khẩu?" TextColor="Azure" TextDecorations="Underline" FontSize="15" HorizontalTextAlignment="End"/>
-            <Button Margin="15" Text="Đăng nhập" BackgroundColor="#66999A" TextColor="Azure"/>
+            <Button Margin="15" Text="Đăng nhập" BackgroundColor="#66999A" TextColor="Azure" Clicked="Button_Clicked"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

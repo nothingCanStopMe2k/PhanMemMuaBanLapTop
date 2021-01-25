@@ -26,5 +26,10 @@ namespace test
         {
             Navigation.PushAsync(new DangKiVoiEmail());
         }
+
+        private void DangNhapVoiFB_Clicked(object sender, EventArgs e)
+        {
+            Navigation.PushAsync(new TrangChu("Tiến"));
+        }
     }
 }
