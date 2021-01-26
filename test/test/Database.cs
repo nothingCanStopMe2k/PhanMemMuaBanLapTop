@@ -55,9 +55,11 @@ namespace test
         {
             try
             {
+
                 string duongdan = System.IO.Path.Combine(folder, "laptop.db");
                 var connection = new SQLiteConnection(duongdan);
                 connection.Delete<Laptop>(MALT);
+                
                 return true;
             }
             catch

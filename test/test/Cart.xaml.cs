@@ -15,6 +15,7 @@ namespace test
         public Cart()
         {
             InitializeComponent();
+            HienThi();
         }
 
         public void HienThi()
@@ -42,10 +43,12 @@ namespace test
         private async void Lstcart_ItemSelected(object sender, SelectedItemChangedEventArgs e)
         {
             var res = await DisplayAlert("Thông báo", "Bạn có muốn xóa sản phẩm không?", "Đồng ý", "Hủy");
+            DisplayAlert("THo", res.ToString(), "OK");
 
             if (res.ToString() == "True")
             {
                 Laptop lt = (Laptop)lstcart.SelectedItem;
+               
                 Database db = new Database();
                 if (db.Xoa_Laptop(lt.MALT) == true)
                 {

@@ -9,6 +9,8 @@ namespace test
         public App()
         {
             InitializeComponent();
+            Database db = new Database();
+            db.CreateDatabase();
 
             MainPage = new NavigationPage(new DangKi());
 
