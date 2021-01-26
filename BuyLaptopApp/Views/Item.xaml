@@ -2,33 +2,69 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="BuyLaptopApp.Views.Item">
-    <ContentPage.Content>
-        <StackLayout>
-            <Frame BackgroundColor="#2196F3" Padding="24" CornerRadius="0">
-                <Label Text="Danh sách sản phẩm" HorizontalTextAlignment="Center" TextColor="White" FontSize="36"/>
-            </Frame>
-            <Label Text="Chọn sản phẩm:"/>
-            <ListView x:Name="lstlt" ItemSelected="lstlt_ItemSelected">
-                <ListView.ItemTemplate>
-                    <DataTemplate>
-                        <ViewCell>
-                            <Grid>
-                                <Grid.RowDefinitions>
-                                    <RowDefinition/>
-                                </Grid.RowDefinitions>
-                                <Grid.ColumnDefinitions>
-                                    <ColumnDefinition Width="*"/>
-                                    <ColumnDefinition Width="*"/>
-                                    <ColumnDefinition Width="*"/>
-                                </Grid.ColumnDefinitions>
-                                <Image Source="{Binding HINH}" Grid.Row="0" Grid.Column="0"/>
-                                <Label Text="{Binding TEN}" Grid.Row="0" Grid.Column="1" VerticalTextAlignment="Center"/>
-                                <Label Text="{Binding GIA}" Grid.Row="0" Grid.Column="2" VerticalTextAlignment="Center"/>
-                            </Grid>
-                        </ViewCell>
-                    </DataTemplate>
-                </ListView.ItemTemplate>
-            </ListView>
-        </StackLayout>
+    <ContentPage.ToolbarItems>
+            <ToolbarItem Icon="iconsearch.jpg" Text="Tìm kiếm"/>
+
+        </ContentPage.ToolbarItems>
+
+        <ContentPage.Content>
+            <StackLayout>
+                <Label Text="Danh mục sản phẩm" HorizontalTextAlignment="Center" FontSize="24" TextColor="#000" FontAttributes="Bold" Margin="0,20,0,10" />
+
+                <ListView x:Name="lstlt" ItemSelected="Lstlt_ItemSelected" RowHeight="100" >
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <StackLayout>
+                                    <Grid>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="Auto"/>
+                                            <ColumnDefinition Width="*"/>
+
+                                        </Grid.ColumnDefinitions>
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition />
+
+                                        </Grid.RowDefinitions>
+                                        <Image Source="{Binding HINH}" HeightRequest="90" Grid.Row="0" Grid.Column="0" />
+                                        <StackLayout Grid.Column="1" Grid.Row="0">
+                                            <Grid>
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition/>
+                                                </Grid.ColumnDefinitions>
+                                                <Grid.RowDefinitions>
+                                                    <RowDefinition Height="*"/>
+                                                    <RowDefinition Height="Auto"/>
+                                                    <RowDefinition Height="*"/>
+                                                </Grid.RowDefinitions>
+                                                <Label Text="{Binding TEN}" TextColor="#222" Grid.Column="0" Grid.Row="0" VerticalTextAlignment="Start" Margin="5,15,0,0" FontAttributes="Bold"/>
+                                                <Grid Grid.Column="0" Grid.Row="1" Margin="5,0,0,0">
+                                                    <Grid.RowDefinitions>
+                                                        <RowDefinition Height="Auto"/>
+                                                    </Grid.RowDefinitions>
+                                                    <Grid.ColumnDefinitions>
+                                                        <ColumnDefinition Width="*"/>
+                                                        <ColumnDefinition Width="*"/>
+                                                        <ColumnDefinition Width="*"/>
+                                                    </Grid.ColumnDefinitions>
+                                                    <Label Text="Giá Tiền: " TextColor="#222" Grid.Column="0" Grid.Row="0"/>
+                                                    <Label Text="{Binding GIA}" TextColor="#222" Grid.Column="1" Grid.Row="0" />
+                                                    <Label Text="vnd" TextColor="#222" Grid.Column="2" Grid.Row="0" Margin="-20,0,0,0"/>
+                                                </Grid>
+                                                <Label Text="Giảm 50% - Khi nhập mã 'NHTXYZ'" TextColor="MediumVioletRed" Grid.Column="0" Grid.Row="2" VerticalTextAlignment="End" Margin="5,0,0,15"/>
+                                            </Grid>
+
+                                        </StackLayout>
+
+
+                                    </Grid>
+                                </StackLayout>
+
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </StackLayout>
+
     </ContentPage.Content>
 </ContentPage>

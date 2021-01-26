@@ -28,15 +28,22 @@ namespace BuyLaptopApp.Views
             lstnsx.ItemsSource = lstsx;
         }
 
-        private void lstnsx_ItemSelected(object sender, SelectedItemChangedEventArgs e)
+        public Home(string TenNguoiDung)
+        {
+            InitializeComponent();
+            HienThiNSX();
+            lstChao1.Text = "Xin chào, " + TenNguoiDung;
+        }
+
+        private void BtnCart_Clicked(object sender, EventArgs e)
+        {
+            Navigation.PushAsync(new Cart());
+        }
+
+        private void Lstnsx_ItemSelected(object sender, SelectedItemChangedEventArgs e)
         {
             NhaSanXuat nsx = (NhaSanXuat)lstnsx.SelectedItem;
             Navigation.PushAsync(new Item(nsx));
-        }
-
-        private void btnCart_Clicked(object sender, EventArgs e)
-        {
-            Navigation.PushAsync(new Cart());
         }
     }
 }

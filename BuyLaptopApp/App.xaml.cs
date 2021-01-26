@@ -11,7 +11,7 @@ namespace BuyLaptopApp
             InitializeComponent();
             Database db = new Database();
             db.CreateDatabase();
-            MainPage = new NavigationPage(new Views.Login());
+            MainPage = new NavigationPage(new Views.SignUp());
         }
 
         protected override void OnStart()

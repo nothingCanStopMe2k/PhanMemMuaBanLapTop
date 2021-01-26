@@ -17,9 +17,19 @@ namespace BuyLaptopApp.Views
             InitializeComponent();
         }
 
-        private void btnNavlg_Clicked(object sender, EventArgs e)
+        private void ClickDangNhap_Clicked(object sender, EventArgs e)
         {
             Navigation.PushAsync(new Login());
+        }
+
+        private void DangKiVoiEmail_Clicked(object sender, EventArgs e)
+        {
+            Navigation.PushAsync(new Signupwithemail());
+        }
+
+        private void DangNhapVoiFB_Clicked(object sender, EventArgs e)
+        {
+            Navigation.PushAsync(new Home("Tiến"));
         }
     }
 }

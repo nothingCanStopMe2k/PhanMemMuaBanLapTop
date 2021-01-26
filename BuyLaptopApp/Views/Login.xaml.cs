@@ -11,19 +11,23 @@ namespace BuyLaptopApp.Views
 {
     public partial class Login : ContentPage
     {
+        string TenNguoiDung;
         public Login()
         {
             InitializeComponent();
         }
 
-        private void btnlg_Clicked(object sender, EventArgs e)
+        public Login(string Ten, string Email, string MatKhau)
         {
-            Navigation.PushAsync(new Home());
+            InitializeComponent();
+            lstEmail.Text = Email;
+            lstMatKhau.Text = MatKhau;
+            TenNguoiDung = Ten;
         }
 
-        private void btnNavSu_Clicked(object sender, EventArgs e)
+        private void Button_Clicked(object sender, EventArgs e)
         {
-            Navigation.PushAsync(new SignUp());
+            Navigation.PushAsync(new Home(TenNguoiDung));
         }
     }
 }

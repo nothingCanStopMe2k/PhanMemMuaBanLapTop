@@ -1,34 +1,41 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="BuyLaptopApp.Views.Home">
+             x:Class="BuyLaptopApp.Views.Home"
+             BackgroundImage="bg2.jpg">
     <ContentPage.Content>
-        <StackLayout>
-            <Frame BackgroundColor="#2196F3" Padding="24" CornerRadius="0">
-                <Label Text="Trang chủ" HorizontalTextAlignment="Center" TextColor="White" FontSize="36" Grid.Row="1" Grid.Column="0"/>
-            </Frame>
-            
-            <Label Text="Chọn nhà sản xuất:"/>
-            <ListView x:Name="lstnsx" ItemSelected="lstnsx_ItemSelected">
-                <ListView.ItemTemplate>
-                    <DataTemplate>
-                        <ViewCell>
-                            <Grid>
-                                <Grid.RowDefinitions>
-                                    <RowDefinition/>
-                                </Grid.RowDefinitions>
-                                <Grid.ColumnDefinitions>
-                                    <ColumnDefinition Width="*"/>
-                                    <ColumnDefinition Width="2*"/>
-                                </Grid.ColumnDefinitions>
-                                <Image Source="{Binding HINH}" Grid.Row="0" Grid.Column="0"/>
-                                <Label Text="{Binding TEN}" Grid.Row="0" Grid.Column="1" VerticalTextAlignment="Center"/>
-                            </Grid>
-                        </ViewCell>
-                    </DataTemplate>
-                </ListView.ItemTemplate>
-            </ListView>
-            <ImageButton x:Name="btnCart" Source="shoppingcart.png" HeightRequest="50" Clicked="btnCart_Clicked"/>
-        </StackLayout>
+        <ScrollView>
+            <StackLayout>
+                <Label x:Name="lstChao1" Margin="20, 30, 20, 10" HorizontalTextAlignment="Center" TextColor="#111" FontSize="18"/>
+                <Label Text="chúc bạn một ngày tốt lành!" Margin="0,-10,0,0" HorizontalTextAlignment="Center" FontSize="18" FontAttributes="Bold" TextColor="#000"/>
+                <Frame Margin="0, 30, 0, 0" BackgroundColor="#fff">
+                    <StackLayout>
+                        <Label Text="Các hãng công nghệ hot hiện nay" FontSize="18" FontAttributes="Bold" HorizontalTextAlignment="Center"/>
+                        <ListView x:Name="lstnsx" Margin="20" HeightRequest="250" RowHeight="150" ItemSelected="Lstnsx_ItemSelected">
+                            <ListView.ItemTemplate>
+                                <DataTemplate>
+                                    <ViewCell>
+                                        <Grid  Padding="0" Margin="20, 0, 0, 20">
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition Height="80"/>
+                                                <RowDefinition Height="*"/>
+                                            </Grid.RowDefinitions>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="*"/>
+
+                                            </Grid.ColumnDefinitions>
+                                            <Image Source="{Binding HINH}" Grid.Row="0" Grid.Column="0" HeightRequest="100" WidthRequest="100"/>
+                                            <Label Text="{Binding TEN}" Grid.Row="1" Grid.Column="0" HorizontalTextAlignment="Center" FontSize="15" FontAttributes="Bold"/>
+                                        </Grid>
+                                    </ViewCell>
+                                </DataTemplate>
+                            </ListView.ItemTemplate>
+                        </ListView>
+                    </StackLayout>
+                </Frame>
+
+                <ImageButton x:Name="btnCart" HeightRequest="50" Source="shoppingcart.png" BackgroundColor="Transparent" Clicked="BtnCart_Clicked"/>
+            </StackLayout>
+        </ScrollView>
     </ContentPage.Content>
 </ContentPage>

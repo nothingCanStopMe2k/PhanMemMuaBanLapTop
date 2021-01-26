@@ -34,14 +34,16 @@ namespace BuyLaptopApp.Views
                     break;
                 case "asus":
                     dslt.Add(new Laptop { MALT = "as01", MANSX = "asus", TEN = "Asus ZenBook Duo UX481FL BM048T", HINH = "asuszenbookdouux481xl.jpg", MOTA = "i5 10210U/8GB/512GB SSD/WIN10", GIA = 30990000 });
+                    dslt.Add(new Laptop { MALT = "as01", MANSX = "asus", TEN = "Asus ZenBook Duo UX481FL BM048T", HINH = "asuszenbookdouux481xl.jpg", MOTA = "i5 10210U/8GB/512GB SSD/WIN10", GIA = 30990000 });
                     break;
+
                 default:
                     break;
             }
             lstlt.ItemsSource = dslt;
         }
 
-        private void lstlt_ItemSelected(object sender, SelectedItemChangedEventArgs e)
+        private void Lstlt_ItemSelected(object sender, SelectedItemChangedEventArgs e)
         {
             Laptop lt = (Laptop)lstlt.SelectedItem;
             Navigation.PushAsync(new Detail(lt));
