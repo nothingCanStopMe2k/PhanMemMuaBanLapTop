@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<MasterDetailPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="BuyLaptopApp.Views.MasterDetailPage1"
+             xmlns:pages="clr-namespace:BuyLaptopApp.Views"
+             NavigationPage.HasNavigationBar="false">
+  <MasterDetailPage.Master>
+        <ContentPage Padding="10" BackgroundColor="#ccc" Title="☰">
+            <ContentPage.Content>
+                <StackLayout Margin="5, 30, 5, 30">
+                    <Label Text="Master" />
+                    <Grid Margin="5,10,10,10">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="4*"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition />
+                        </Grid.RowDefinitions>
+                       
+                        <Image Grid.Column="0" Grid.Row="0" Source="icon_home.png" HeightRequest="50" HorizontalOptions="End"/>
+                        <Button Grid.Column="1" Grid.Row="0" Text="Trang Chủ" x:Name="lstTrangChu" Clicked="LstTrangChu_Clicked" BackgroundColor="Transparent" VerticalOptions="Center" HorizontalOptions="Start"/>
+                    </Grid>
+                    <Grid Margin="5,10,10,10">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="4*"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition />
+                        </Grid.RowDefinitions>
+
+                        <Image Grid.Column="0" Grid.Row="0" Source="icon_profile.png" HeightRequest="50" HorizontalOptions="End"/>
+                        <Button Grid.Column="1" Grid.Row="0" Text="Cá Nhân"  x:Name="lstCaNhan" Clicked="LstCaNhan_Clicked" BackgroundColor="Transparent" VerticalOptions="Center" HorizontalOptions="Start"/>
+                    </Grid>
+                    <Grid Margin="5,10,10,10">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="4*"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition />
+                        </Grid.RowDefinitions>
+
+                        <Image Grid.Column="0" Grid.Row="0" Source="icon_cart.png" HeightRequest="50" HorizontalOptions="End"/>
+                        <Button Grid.Column="1" Grid.Row="0" Text="Giỏ Hàng"  x:Name="lstGioHang" Clicked="LstGioHang_Clicked" BackgroundColor="Transparent" VerticalOptions="Center" HorizontalOptions="Start"/>
+                    </Grid>
+
+                    
+                   
+                </StackLayout>
+            </ContentPage.Content>
+        </ContentPage>
+  </MasterDetailPage.Master>
+  <MasterDetailPage.Detail>
+    <NavigationPage>
+      <x:Arguments>
+        <pages:Home />
+      </x:Arguments>
+    </NavigationPage>
+  </MasterDetailPage.Detail>
+</MasterDetailPage>

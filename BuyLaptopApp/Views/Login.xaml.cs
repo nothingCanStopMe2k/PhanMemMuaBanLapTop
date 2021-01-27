@@ -27,7 +27,7 @@ namespace BuyLaptopApp.Views
 
         private void Button_Clicked(object sender, EventArgs e)
         {
-            Navigation.PushAsync(new Home(TenNguoiDung));
+            Navigation.PushAsync(new MasterDetailPage1(TenNguoiDung));
         }
     }
 }

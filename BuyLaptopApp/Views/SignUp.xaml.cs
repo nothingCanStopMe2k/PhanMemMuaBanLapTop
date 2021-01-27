@@ -29,7 +29,7 @@ namespace BuyLaptopApp.Views
 
         private void DangNhapVoiFB_Clicked(object sender, EventArgs e)
         {
-            Navigation.PushAsync(new Home("Tiến"));
+            Navigation.PushAsync(new MasterDetailPage1("Tiến"));
         }
     }
 }
