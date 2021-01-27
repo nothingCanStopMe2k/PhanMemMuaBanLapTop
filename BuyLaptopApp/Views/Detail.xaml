@@ -3,12 +3,13 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="BuyLaptopApp.Views.Detail"
             >
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Icon="icon_cart_white.png" Clicked="ToolbarItem_Clicked"/>
+    </ContentPage.ToolbarItems>
     <ContentPage.Content>
-        <StackLayout>
-            <Frame BackgroundColor="#2196F3" Padding="24" CornerRadius="0">
-                <Label Text="Chi tiết sản phẩm" HorizontalTextAlignment="Center" TextColor="White" FontSize="36"/>
-            </Frame>
-            <ListView x:Name="ctsp" RowHeight="500">
+        <ScrollView>
+    
+            <ListView x:Name="ctsp" RowHeight="600">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
@@ -18,24 +19,82 @@
                                     <RowDefinition/>
                                     <RowDefinition/>
                                     <RowDefinition/>
+                                    <RowDefinition Height="Auto"/>
                                 </Grid.RowDefinitions>
                                 <Grid.ColumnDefinitions>
-                                    <ColumnDefinition Width="*"/>
-                                    <ColumnDefinition Width="2*"/>
+                                    <ColumnDefinition />
+                                    
                                 </Grid.ColumnDefinitions>
-                                <Image Source="{Binding HINH}" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3"/>
-                                <Label Text="Tên:" Grid.Row="1" Grid.Column="0" VerticalTextAlignment="Center"/>
-                                <Label Text="{Binding TEN}" Grid.Row="1" Grid.Column="1" VerticalTextAlignment="Center"/>
-                                <Label Text="Mô tả:" Grid.Row="2" Grid.Column="0" VerticalTextAlignment="Center"/>
-                                <Label Text="{Binding MOTA}" Grid.Row="2" Grid.Column="1" VerticalTextAlignment="Center"/>
-                                <Label Text="Giá:" Grid.Row="3" Grid.Column="0" VerticalTextAlignment="Center"/>
-                                <Label Text="{Binding GIA}" Grid.Row="3" Grid.Column="1" VerticalTextAlignment="Center"/>
+                                <Image Source="{Binding HINH}" Grid.Row="0" Grid.Column="0" Grid.RowSpan="3" HeightRequest="350"/>
+                                <StackLayout Grid.Row="3" Grid.Column="0" Margin="20, 0 ,0,0">
+                                    <Grid>
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="Auto"/>
+                                            <RowDefinition Height="Auto"/>
+                                            <RowDefinition Height="Auto"/>
+                                            <RowDefinition Height="Auto"/>
+                                        </Grid.RowDefinitions>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="4*"/>
+                                            <ColumnDefinition Width="*"/>
+                                        </Grid.ColumnDefinitions>
+                                        <Label Text="{Binding TEN}" Grid.Row="0" Grid.Column="0" FontAttributes="Bold" FontSize="20" TextColor="#000"/>
+                                        <Label Text="{Binding MOTA}" Grid.Row="1" Grid.Column="0" TextColor="#aaa"/>
+                                        <Grid Grid.Row="2" Grid.Column="0">
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="2*"/>
+                                                <ColumnDefinition Width="3*"/>
+                                                <ColumnDefinition Width="2*" />
+                                            </Grid.ColumnDefinitions>
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition/>
+                                            </Grid.RowDefinitions>
+                                            <Label Text="Đánh giá: " Grid.Row="0" Grid.Column="0" FontSize="18"/>
+                                            <Grid Grid.Row="0" Grid.Column="1" HorizontalOptions="Start">
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition/>
+                                                    <ColumnDefinition/>
+                                                    <ColumnDefinition/>
+                                                    <ColumnDefinition/>
+                                                    <ColumnDefinition/>
+                                                </Grid.ColumnDefinitions>
+                                                <Grid.RowDefinitions>
+                                                    <RowDefinition/>
+                                                </Grid.RowDefinitions>
+                                                <Image Source="rating_start.png" Grid.Row="0" Grid.Column="0" HorizontalOptions="Start" VerticalOptions="Center"/>
+                                                <Image Source="rating_start.png" Grid.Row="0" Grid.Column="1" HorizontalOptions="Start" VerticalOptions="Center"/>
+                                                <Image Source="rating_start.png" Grid.Row="0" Grid.Column="2" HorizontalOptions="Start" VerticalOptions="Center"/>
+                                                <Image Source="rating_start.png" Grid.Row="0" Grid.Column="3" HorizontalOptions="Start" VerticalOptions="Center"/>
+                                                <Image Source="rating_start.png" Grid.Row="0" Grid.Column="4" HorizontalOptions="Start" VerticalOptions="Center"/>
+                                            </Grid>
+                                            
+                                            <Label Text="(1024 lượt)" Grid.Row="0" Grid.Column="2" HorizontalTextAlignment="Start" VerticalTextAlignment="Center"/>
+                                        </Grid>
+                                        <Grid Grid.Row="3" Grid.Column="0">
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="*"/>
+                                                <ColumnDefinition Width="2*"/>
+                                            </Grid.ColumnDefinitions>
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition/>
+                                            </Grid.RowDefinitions>
+                                            <Label Text="{Binding GIA}" Grid.Row="0" Grid.Column="0" TextColor="MediumVioletRed" FontSize="18"/>
+                                            <Label Text="vnd" Grid.Row="0" Grid.Column="1" TextColor="MediumVioletRed" FontSize="18" HorizontalTextAlignment="Start"/>
+                                        </Grid>
+                                        <Image Source="heart.png" VerticalOptions="Center" Grid.Column="1" Grid.Row="0"/>
+                                        <Image Source="share.png"  VerticalOptions="Center" Grid.Column="1" Grid.Row="2"/>
+
+                                    </Grid>
+                                   
+                                </StackLayout>
+                                <Button VerticalOptions="Center" x:Name="btnAddtoCart" Text="Thêm vào giỏ hàng" Clicked="btnAddtoCart_Clicked" Grid.Row="4" Grid.Column="0" BackgroundColor="MediumVioletRed" TextColor="Azure" CornerRadius="30" Margin="80,40,80,40" />
+
                             </Grid>
                         </ViewCell>
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>
-            <Button x:Name="btnAddtoCart" Text="Thêm vào giỏ hàng" Clicked="btnAddtoCart_Clicked"/>
-        </StackLayout>
+          
+        </ScrollView>
     </ContentPage.Content>
 </ContentPage>

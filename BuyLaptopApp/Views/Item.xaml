@@ -4,9 +4,9 @@
              x:Class="BuyLaptopApp.Views.Item"
              >
     <ContentPage.ToolbarItems>
-            <ToolbarItem Icon="iconsearch.jpg" Text="Tìm kiếm"/>
-
-        </ContentPage.ToolbarItems>
+        <ToolbarItem Icon="icon_search.png" />
+        <ToolbarItem Icon="icon_cart_white.png"  Clicked="ToolbarItem_Clicked"/>
+    </ContentPage.ToolbarItems>
 
         <ContentPage.Content>
             <StackLayout>

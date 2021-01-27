@@ -45,5 +45,10 @@ namespace BuyLaptopApp.Views
             NhaSanXuat nsx = (NhaSanXuat)lstnsx.SelectedItem;
             Navigation.PushAsync(new Item(nsx));
         }
+
+        private void ToolbarItem_Clicked(object sender, EventArgs e)
+        {
+            Navigation.PushAsync(new Cart());
+        }
     }
 }

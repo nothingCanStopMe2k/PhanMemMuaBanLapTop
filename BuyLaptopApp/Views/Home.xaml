@@ -4,11 +4,15 @@
              x:Class="BuyLaptopApp.Views.Home"
              BackgroundImage="bg2.jpg"
              >
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Icon="icon_search.png" />
+        <ToolbarItem Icon="icon_cart_white.png" Clicked="ToolbarItem_Clicked"/>
+    </ContentPage.ToolbarItems>
     <ContentPage.Content>
         <ScrollView>
             <StackLayout>
                 <Label x:Name="lstChao1" Margin="20, 30, 20, 10" HorizontalTextAlignment="Center" TextColor="#111" FontSize="18"/>
-                <Label Text="chúc bạn một ngày tốt lành!" Margin="0,-10,0,0" HorizontalTextAlignment="Center" FontSize="18" FontAttributes="Bold" TextColor="#000"/>
+                <Label Text="Chúc bạn một ngày tốt lành!" Margin="0,-10,0,0" HorizontalTextAlignment="Center" FontSize="18" FontAttributes="Bold" TextColor="#000"/>
                 <Frame Margin="0, 30, 0, 0" BackgroundColor="#fff">
                     <StackLayout>
                         <Label Text="Các hãng công nghệ hot hiện nay" FontSize="18" FontAttributes="Bold" HorizontalTextAlignment="Center"/>

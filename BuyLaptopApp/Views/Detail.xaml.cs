@@ -35,8 +35,13 @@ namespace BuyLaptopApp.Views
             if (db.Them_Laptop(l) == true)
             {
                 DisplayAlert("Thông báo", "Thêm thành công", "Đồng ý");
-                Navigation.PushAsync(new Home());
+                
             }
+        }
+
+        private void ToolbarItem_Clicked(object sender, EventArgs e)
+        {
+            Navigation.PushAsync(new Cart());
         }
     }
 }

@@ -48,5 +48,10 @@ namespace BuyLaptopApp.Views
             Laptop lt = (Laptop)lstlt.SelectedItem;
             Navigation.PushAsync(new Detail(lt));
         }
+
+        private void ToolbarItem_Clicked(object sender, EventArgs e)
+        {
+            Navigation.PushAsync(new Cart());
+        }
     }
 }
