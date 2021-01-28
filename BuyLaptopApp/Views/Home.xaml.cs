@@ -1,7 +1,9 @@
 ﻿using BuyLaptopApp.Models;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -19,13 +21,12 @@ namespace BuyLaptopApp.Views
             HienThiNSX();
         }
 
-        private void HienThiNSX()
+        private async void HienThiNSX()
         {
-            List<NhaSanXuat> lstsx = new List<NhaSanXuat>();
-            lstsx.Add(new NhaSanXuat { MANSX = "acer", TEN = "ACER", HINH = "acer.jpg" });
-            lstsx.Add(new NhaSanXuat { MANSX = "asus", TEN = "ASUS", HINH = "asus.jpg" });
-            lstsx.Add(new NhaSanXuat { MANSX = "dell", TEN = "DELL", HINH = "dell.jpg" });
-            lstnsx.ItemsSource = lstsx;
+            HttpClient http = new HttpClient();
+            var kq = await http.GetStringAsync("http://www.qllt.somee.com/api/serviceController/layNSX");
+            var nsxs = JsonConvert.DeserializeObject<List<NhaSanXuat>>(kq);
+            lstnsx.ItemsSource = nsxs;
         }
 
         public Home(string TenNguoiDung)

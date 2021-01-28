@@ -13,6 +13,6 @@ namespace BuyLaptopApp.Models
         public string TEN { get; set; }
         public string HINH { get; set; }
         public string MOTA { get; set; }
-        public int GIA { get; set; }
+        public string GIA { get; set; }
     }
 }

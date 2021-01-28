@@ -10,6 +10,7 @@ namespace BuyLaptopApp
         {
             InitializeComponent();
             Database db = new Database();
+            db.DeleteDatabase();
             db.CreateDatabase();
             MainPage = new NavigationPage(new Views.SignUp());
         }

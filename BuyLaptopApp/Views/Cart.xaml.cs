@@ -34,7 +34,7 @@ namespace BuyLaptopApp.Views
             {
                 foreach (Laptop cart in carts)
                 {
-                    tong += cart.GIA;
+                    tong += int.Parse(cart.GIA);
                 }
             }
             
