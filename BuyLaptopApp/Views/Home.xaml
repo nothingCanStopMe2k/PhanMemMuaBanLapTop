@@ -11,26 +11,47 @@
     <ContentPage.Content>
         <ScrollView>
             <StackLayout>
-                <Label x:Name="lstChao1" Margin="20, 30, 20, 10" HorizontalTextAlignment="Center" TextColor="#111" FontSize="18"/>
-                <Label Text="Chúc bạn một ngày tốt lành!" Margin="0,-10,0,0" HorizontalTextAlignment="Center" FontSize="18" FontAttributes="Bold" TextColor="#000"/>
-                <Frame Margin="0, 30, 0, 0" BackgroundColor="#fff">
+                <Label x:Name="lstChao1" Margin="20, 30, 20, 10" HorizontalTextAlignment="Center" TextColor="#111" FontSize="25"/>
+                <Label Text="Chúc bạn một ngày tốt lành!" Margin="0,-10,0,0" HorizontalTextAlignment="Center" FontSize="25" FontAttributes="Bold" TextColor="#000"/>
+                <Frame Margin="0, 30, 0, 0" BackgroundColor="#ccc">
                     <StackLayout>
                         <Label Text="Các hãng công nghệ hot hiện nay" FontSize="18" FontAttributes="Bold" HorizontalTextAlignment="Center"/>
-                        <ListView x:Name="lstnsx" Margin="20" HeightRequest="250" RowHeight="150" ItemSelected="Lstnsx_ItemSelected">
+                        <ListView x:Name="lstnsx" Margin="20" HeightRequest="250" RowHeight="100" ItemSelected="Lstnsx_ItemSelected">
                             <ListView.ItemTemplate>
                                 <DataTemplate>
                                     <ViewCell>
                                         <Grid  Padding="0" Margin="20, 0, 0, 20">
                                             <Grid.RowDefinitions>
-                                                <RowDefinition Height="80"/>
-                                                <RowDefinition Height="*"/>
+                                                <RowDefinition Height="Auto"/>
+                                                
                                             </Grid.RowDefinitions>
                                             <Grid.ColumnDefinitions>
                                                 <ColumnDefinition Width="*"/>
+                                                <ColumnDefinition Width="3*"/>
 
                                             </Grid.ColumnDefinitions>
-                                            <Image Source="{Binding HINH}" Grid.Row="0" Grid.Column="0" HeightRequest="100" WidthRequest="100"/>
-                                            <Label Text="{Binding TEN}" Grid.Row="1" Grid.Column="0" HorizontalTextAlignment="Center" FontSize="15" FontAttributes="Bold"/>
+                                            <Frame 
+                                                Grid.Row="0"
+                                               Grid.Column="0"      
+                                             
+                                               HeightRequest="70"
+                                                WidthRequest="150"
+                                               CornerRadius="75"
+                                               IsClippedToBounds="True"
+                                               HasShadow="False" 
+                                               Padding="0"
+                                               Margin="0,10,5,0"
+                                               VerticalOptions="Center" 
+                                               HorizontalOptions="Center" >
+                                                            <Image
+                                                HorizontalOptions="FillAndExpand"
+                                                VerticalOptions="FillAndExpand"
+                                                WidthRequest="1000"
+                                                HeightRequest="1000"
+                                                Source="{Binding HINH}"/>
+                                            </Frame>    
+
+                                            <Label Text="{Binding TEN}" FontSize="25" VerticalTextAlignment="Center" TextColor="#000" Grid.Row="0" Grid.Column="1" HorizontalTextAlignment="Center"  FontAttributes="Bold"/>
                                         </Grid>
                                     </ViewCell>
                                 </DataTemplate>
