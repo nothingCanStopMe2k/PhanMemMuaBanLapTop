@@ -26,7 +26,7 @@
                                     
                                 </Grid.ColumnDefinitions>
                                 <Image Source="{Binding HINH}" Grid.Row="0" Grid.Column="0" Grid.RowSpan="3" HeightRequest="350"/>
-                                <StackLayout Grid.Row="3" Grid.Column="0" Margin="20, 0 ,0,0">
+                                <StackLayout Grid.Row="3" Grid.Column="0" Margin="20, 0 ,0,5">
                                     <Grid>
                                         <Grid.RowDefinitions>
                                             <RowDefinition Height="Auto"/>

@@ -5,44 +5,71 @@
              >
     <ContentPage.Content>
         <StackLayout>
-            <Frame BackgroundColor="#2196F3" Padding="24" CornerRadius="0">
-                <Label Text="Giỏ hàng" HorizontalTextAlignment="Center" TextColor="White" FontSize="36"/>
-            </Frame>
-            <Label Text="Xóa sản phẩm:"/>
-            <ListView x:Name="lstcart" ItemSelected="lstcart_ItemSelected">
+            <Label Text="Giỏ hàng" HorizontalTextAlignment="Center" FontSize="24" TextColor="#000" FontAttributes="None" Margin="0,20,0,10" />
+            
+            <ListView x:Name="lstcart" ItemSelected="lstcart_ItemSelected" RowHeight="160">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
                             <Grid>
-                                <Grid.RowDefinitions>
-                                    <RowDefinition/>
-                                </Grid.RowDefinitions>
                                 <Grid.ColumnDefinitions>
-                                    <ColumnDefinition Width="*"/>
-                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="Auto"/>
                                     <ColumnDefinition Width="*"/>
                                 </Grid.ColumnDefinitions>
-                                <Image Source="{Binding HINH}" Grid.Row="0" Grid.Column="0"/>
-                                <Label Text="{Binding TEN}" Grid.Row="0" Grid.Column="1" VerticalTextAlignment="Center"/>
-                                <Label Text="{Binding GIA}" Grid.Row="0" Grid.Column="2" VerticalTextAlignment="Center"/>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                
+                          
+                                </Grid.RowDefinitions>
+                                <Image Source="{Binding HINH}"  WidthRequest="200" Grid.Row="0" Grid.Column="0" Grid.RowSpan="4" />
+                               
+                                <Label Margin="0,50,0,0" VerticalTextAlignment="End" Text="{Binding TEN}" Grid.Row="0" Grid.Column="1" FontAttributes="Bold" TextColor="#000"/>
+                                <Grid VerticalOptions="Center" Grid.Row="1" Grid.Column="1">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="*"/>
+                                    </Grid.ColumnDefinitions>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition/>
+                                    </Grid.RowDefinitions>
+                                    <Label Text="{Binding GIA}" Grid.Row="0" Grid.Column="0" TextColor="MediumVioletRed" FontSize="18"/>
+                                    <Label Text="vnd" Grid.Row="0" Grid.Column="1" TextColor="MediumVioletRed" FontSize="18" HorizontalTextAlignment="Start"/>
+                                </Grid>
+                                <Grid VerticalOptions="Start" Grid.Row="2" Grid.Column="1">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="Auto"/>
+                                        <ColumnDefinition Width="Auto"/>
+                                        <ColumnDefinition Width="Auto"/>
+                                        <ColumnDefinition Width="Auto"/>
+                                    </Grid.ColumnDefinitions>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition/>
+                                    </Grid.RowDefinitions>
+                                    <Label VerticalTextAlignment="Center" Text="SL: 1" Grid.Column="0" Grid.Row="0" Margin="0,0,10,0"/>
+                                    <Image Source="minus.png" Grid.Row="0" Grid.Column="1"/>
+                                    <Image Source="plus.png" Grid.Row="0" Grid.Column="2"/>
+                                    
+                                </Grid>
+                                
                             </Grid>
                         </ViewCell>
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>
-            <Grid HeightRequest="300">
+            <Grid Margin="0,0,0,0">
                 <Grid.RowDefinitions>
                     <RowDefinition/>
                 </Grid.RowDefinitions>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*"/>
                     <ColumnDefinition Width="*"/>
-                    <ColumnDefinition Width="*"/>
+               
                 </Grid.ColumnDefinitions>
-                <Label Text="Tổng:" Grid.Row="0" Grid.Column="0"/>
-                <Label x:Name="sum" Grid.Row="0" Grid.Column="2"/>
+                <Label VerticalTextAlignment="Center" Text="Tổng cộng:" TextColor="#000" FontAttributes="Bold" FontSize="18" Margin="10,0,0,0" Grid.Row="0" Grid.Column="0"/>
+                <Label Margin="0,0,10,0" HorizontalTextAlignment="End" x:Name="sum" FontAttributes="Bold" VerticalTextAlignment="Center" TextColor="MediumVioletRed" FontSize="18" Grid.Row="0" Grid.Column="1"/>
             </Grid>
-            <Button x:Name="btnbook" Text="Đặt hàng"/>
+            <Button x:Name="btnbook" Text="Đặt hàng" BackgroundColor="MediumVioletRed" TextColor="Azure" CornerRadius="30" Margin="80,20,80,20" />
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

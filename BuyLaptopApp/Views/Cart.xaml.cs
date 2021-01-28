@@ -13,6 +13,7 @@ namespace BuyLaptopApp.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class Cart : ContentPage
     {
+        string Soluong;
         public Cart()
         {
             InitializeComponent();
@@ -24,7 +25,7 @@ namespace BuyLaptopApp.Views
             Database db = new Database();
             List<Laptop> carts = db.LayThongTinLaptop();
             lstcart.ItemsSource = carts;
-            sum.Text = tinhTongGia(carts).ToString();
+            sum.Text = tinhTongGia(carts).ToString() + "vnd";
         }
 
         public long tinhTongGia(List<Laptop> carts)
@@ -56,5 +57,8 @@ namespace BuyLaptopApp.Views
                 }
             }
         }
+
+       
+        
     }
 }
