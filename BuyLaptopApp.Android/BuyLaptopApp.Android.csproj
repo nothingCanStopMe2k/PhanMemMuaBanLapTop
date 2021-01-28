@@ -131,9 +131,6 @@
     <AndroidResource Include="Resources\drawable\dellinspiron7590.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\DellPrecision.jpg" />
-  </ItemGroup>
-  <ItemGroup>
     <AndroidResource Include="Resources\drawable\delllatitude7390.jpg" />
   </ItemGroup>
   <ItemGroup>
@@ -176,9 +173,6 @@
     <AndroidResource Include="Resources\drawable\bg2.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\asuszenbookdouux481xl.jpg" />
-  </ItemGroup>
-  <ItemGroup>
     <AndroidResource Include="Resources\drawable\icon_home.png" />
   </ItemGroup>
   <ItemGroup>
@@ -203,10 +197,10 @@
     <AndroidResource Include="Resources\drawable\share.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\minus.png" />
+    <AndroidResource Include="Resources\drawable\DellPrecision.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\plus.png" />
+    <AndroidResource Include="Resources\drawable\asuszenbookdouux481xl.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <ProjectExtensions>

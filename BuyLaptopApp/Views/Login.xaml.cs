@@ -20,8 +20,8 @@ namespace BuyLaptopApp.Views
         public Login(string Ten, string Email, string MatKhau)
         {
             InitializeComponent();
-            lstEmail.Text = Email;
-            lstMatKhau.Text = MatKhau;
+            txtSdt.Text = Email;
+            txtMatKhau.Text = MatKhau;
             TenNguoiDung = Ten;
         }
 
