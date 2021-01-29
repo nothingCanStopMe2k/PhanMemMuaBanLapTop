@@ -25,7 +25,7 @@ namespace BuyLaptopApp.Views
             string MatKhau = txtMatKhau.Text;
 
             HttpClient http = new HttpClient();
-            var kq = await http.GetStringAsync("http://www.qllt.somee.com/api/serviceController/dangky?sodt="+ Sdt +"&matkhau="+ MatKhau +"&hoten=" + MatKhau);
+            var kq = await http.GetStringAsync("http://www.qllt.somee.com/api/serviceController/dangky?sodt="+ Sdt +"&matkhau="+ MatKhau +"&hoten=" + Ten);
             if(kq != "[{\"Column1\":\fail\"}]")
             {
                 await DisplayAlert("thông báo", "Đăng ký thành công", "Đồng ý");
