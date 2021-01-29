@@ -125,9 +125,6 @@
     <AndroidResource Include="Resources\drawable\shoppingcart.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\asuszenbook.jpg" />
-  </ItemGroup>
-  <ItemGroup>
     <AndroidResource Include="Resources\drawable\dellinspiron7590.jpg" />
   </ItemGroup>
   <ItemGroup>
@@ -200,7 +197,7 @@
     <AndroidResource Include="Resources\drawable\DellPrecision.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\asuszenbookdouux481xl.jpg" />
+    <AndroidResource Include="Resources\drawable\asuszenbook.jpg" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\drawable\plus.png" />

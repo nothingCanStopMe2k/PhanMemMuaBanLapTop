@@ -51,7 +51,7 @@
                                                     </Grid.ColumnDefinitions>
                                                     <Label Text="Giá Tiền: " TextColor="#222" Grid.Column="0" Grid.Row="0"/>
                                                     <Label Text="{Binding GIA}" TextColor="#222" Grid.Column="1" Grid.Row="0" />
-                                                    <Label Text="vnd" TextColor="#222" Grid.Column="2" Grid.Row="0" Margin="-20,0,0,0"/>
+                                                    <Label Text="vnd" TextColor="#222" Grid.Column="2" Grid.Row="0" Margin="-10,0,0,0"/>
                                                 </Grid>
                                                 <Label Text="Giảm 50% - Khi nhập mã 'NHTXYZ'" TextColor="MediumVioletRed" Grid.Column="0" Grid.Row="2" VerticalTextAlignment="End" Margin="5,0,0,15"/>
                                             </Grid>
