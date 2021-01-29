@@ -51,5 +51,10 @@ namespace BuyLaptopApp.Views
         {
             Navigation.PushAsync(new Cart());
         }
+
+        private void ToolbarItem_Clicked_1(object sender, EventArgs e)
+        {
+            Navigation.PushAsync(new Search());
+        }
     }
 }

@@ -24,14 +24,14 @@
                                 </Grid.RowDefinitions>
                                 <Image Source="{Binding HINH}"  WidthRequest="200" Grid.Row="0" Grid.Column="0" Grid.RowSpan="4" />
                                
-                                <Label Margin="0,50,0,0" VerticalTextAlignment="End" Text="{Binding TEN}" Grid.Row="0" Grid.Column="1" FontAttributes="Bold" TextColor="#000"/>
+                                <Label Margin="0,20,0,0" HeightRequest="50" VerticalTextAlignment="End" Text="{Binding TEN}" Grid.Row="0" Grid.Column="1" FontAttributes="Bold" TextColor="#000"/>
                                 <Grid VerticalOptions="Center" Grid.Row="1" Grid.Column="1">
                                     <Grid.ColumnDefinitions>
                                         <ColumnDefinition Width="*"/>
                                         <ColumnDefinition Width="*"/>
                                     </Grid.ColumnDefinitions>
                                     <Grid.RowDefinitions>
-                                        <RowDefinition/>
+                                        <RowDefinition  Height="Auto"/>
                                     </Grid.RowDefinitions>
                                     <Label Text="{Binding GIA}" Grid.Row="0" Grid.Column="0" TextColor="MediumVioletRed" FontSize="18"/>
                                     <Label Text="vnd" Grid.Row="0" Grid.Column="1" TextColor="MediumVioletRed" FontSize="18" HorizontalTextAlignment="Start"/>
@@ -44,7 +44,7 @@
                                         <ColumnDefinition Width="Auto"/>
                                     </Grid.ColumnDefinitions>
                                     <Grid.RowDefinitions>
-                                        <RowDefinition/>
+                                        <RowDefinition Height="Auto"/>
                                     </Grid.RowDefinitions>
                                     <Label VerticalTextAlignment="Center" Text="SL: 1" Grid.Column="0" Grid.Row="0" Margin="0,0,10,0"/>
                                     <Image Source="minus.png" Grid.Row="0" Grid.Column="1"/>
@@ -69,7 +69,7 @@
                 <Label VerticalTextAlignment="Center" Text="Tổng cộng:" TextColor="#000" FontAttributes="Bold" FontSize="18" Margin="10,0,0,0" Grid.Row="0" Grid.Column="0"/>
                 <Label Margin="0,0,10,0" HorizontalTextAlignment="End" x:Name="sum" FontAttributes="Bold" VerticalTextAlignment="Center" TextColor="MediumVioletRed" FontSize="18" Grid.Row="0" Grid.Column="1"/>
             </Grid>
-            <Button x:Name="btnbook" Text="Đặt hàng" BackgroundColor="MediumVioletRed" TextColor="Azure" CornerRadius="30" Margin="80,20,80,20" />
+            <Button Clicked="Btnbook_Clicked" x:Name="btnbook" Text="Đặt hàng" BackgroundColor="MediumVioletRed" TextColor="Azure" CornerRadius="30" Margin="80,20,80,20" />
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

@@ -13,7 +13,6 @@ namespace BuyLaptopApp.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class Cart : ContentPage
     {
-        string Soluong;
         public Cart()
         {
             InitializeComponent();
@@ -58,7 +57,9 @@ namespace BuyLaptopApp.Views
             }
         }
 
-       
-        
+        private void Btnbook_Clicked(object sender, EventArgs e)
+        {
+            Navigation.PushAsync(new PayNow());
+        }
     }
 }
