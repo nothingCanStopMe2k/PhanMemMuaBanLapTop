@@ -28,7 +28,7 @@ namespace BuyLaptopApp.Views
             info.ItemsSource = kh;
 
             HttpClient http = new HttpClient();
-            var kq = await http.GetStringAsync("http://www.qllt.somee.com/api/serviceController/layHD?sodt=" + kh[0].SODT);
+           var kq = await http.GetStringAsync("http://www.qllt.somee.com/api/serviceController/layHD?sodt=" + kh[0].SODT);
             var hds = JsonConvert.DeserializeObject<List<HoaDon>>(kq);
             lsthd.ItemsSource = hds; 
         }

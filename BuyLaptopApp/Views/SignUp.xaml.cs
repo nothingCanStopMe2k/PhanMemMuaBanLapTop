@@ -1,6 +1,9 @@
-﻿using System;
+﻿using BuyLaptopApp.Models;
+using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -27,9 +30,16 @@ namespace BuyLaptopApp.Views
             Navigation.PushAsync(new Signupwithemail());
         }
 
-        private void DangNhapVoiFB_Clicked(object sender, EventArgs e)
+        private async void DangNhapVoiFB_Clicked(object sender, EventArgs e)
         {
-            Navigation.PushAsync(new MasterDetailPage1("Tiến"));
+
+                String kq = "[{'SODT': '0333619358', 'HOTEN': 'Nguyễn Hữu Tiến', 'MATKHAU': '123456'}]";
+                Database db = new Database();
+                var khs = JsonConvert.DeserializeObject<List<KhachHang>>(kq);
+                db.Them_Khachhang(khs[0]);
+                await Navigation.PushAsync(new MasterDetailPage1("Nguyễn Hữu Tiến"));
+            
+           
         }
     }
 }

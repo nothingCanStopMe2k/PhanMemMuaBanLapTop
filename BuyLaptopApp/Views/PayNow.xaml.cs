@@ -15,6 +15,14 @@ namespace BuyLaptopApp.Views
         public PayNow()
         {
             InitializeComponent();
+            List<bank> bank = new List<bank>();
+            bank.Add(new bank() { Name = "Ngân hàng Vietcombank" });
+            bank.Add(new bank() { Name = "Ngân hàng BIDV" });
+            bank.Add(new bank() { Name = "Ngân hàng TPBANK" });
+            bank.Add(new bank() { Name = "Ngân hàng Sacombank" });
+            bank.Add(new bank() { Name = "Thanh toán MoMo" });
+            bank.Add(new bank() { Name = "Khác" });
+            lstNganhang.ItemsSource = bank;
         }
     }
 }

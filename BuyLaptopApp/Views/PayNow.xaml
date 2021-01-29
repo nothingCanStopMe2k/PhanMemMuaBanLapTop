@@ -3,10 +3,94 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="BuyLaptopApp.Views.PayNow">
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+        <StackLayout BackgroundColor="#eee">
+            <Frame  Margin="0, 1,0,0">
+                <StackLayout >
+                    <Label FontSize="20" TextColor="#000"  FontAttributes="Bold" Text="Vận chuyển đến"/>
+                </StackLayout>
+            </Frame>
+            <Frame Margin="0, 1,0,0">
+                <Grid Padding="5,0,0,0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="2*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+                    <Label Text="Binding Tên" FontAttributes="Bold" FontSize="18" Grid.Column="0" Grid.Row="0"/>
+                    <Button Grid.RowSpan="3" BackgroundColor="Transparent" Text="Thay đổi" FontAttributes="Bold" FontSize="15" Grid.Column="1" Grid.Row="0" />
+                    <Label Text="Binding Địa chỉ" Grid.Column="0" Grid.Row="1"/>
+                    <Label Grid.Column="0" Grid.Row="2">
+                        <Label.FormattedText>
+                            <FormattedString>
+                                <Span Text="SDT: "/>
+                                <Span Text="Binding sdt" FontAttributes="Bold" FontSize="18" />
+                            </FormattedString>
+                        </Label.FormattedText>
+                    </Label>
+                </Grid>
+            </Frame>
+            <Frame  Margin="0,15,0,0">
+                <StackLayout >
+                    <Label FontSize="20" TextColor="#000"   FontAttributes="Bold" Text="Hình thức thanh toán"/>
+                </StackLayout>
+            </Frame>
+            <Frame Margin="0,1,0,0">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                       
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+                    <Grid Grid.Column="0" Grid.Row="0">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                           
+                        </Grid.RowDefinitions>
+                        <CheckBox Margin="-35,0,0,0" Grid.Column="1" Grid.Row="0" HorizontalOptions="Start"/>
+                        <Label HorizontalOptions="Center" VerticalTextAlignment="Center" Text="Tiền mặt"  Grid.Column="0" Grid.Row="0"/>
+                    </Grid>
+                    <Grid HorizontalOptions="Center" Grid.Column="0" Grid.Row="1">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                           
+                            <RowDefinition Height="Auto"/>
+                        </Grid.RowDefinitions>
+                       
+                        <Label HorizontalTextAlignment="End" VerticalTextAlignment="Center" Text="Thẻ cá nhân"  Grid.Column="0" Grid.Row="0"/>
+                        <Picker HorizontalTextAlignment="Start" Title="Chọn ngân hàng" Grid.Column="1" Grid.Row="0" Margin="5,0,0,0" x:Name="lstNganhang" Grid.ColumnSpan="2"/>
+                    </Grid>
+                </Grid>
+            </Frame>
+            <Frame Margin="0,40,0,0">
+                <Grid Margin="0,0,0,0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+
+                    </Grid.ColumnDefinitions>
+                    <Label VerticalTextAlignment="Center" Text="Tổng cộng:" TextColor="#000" FontAttributes="Bold" FontSize="18" Margin="10,0,0,0" Grid.Row="0" Grid.Column="0"/>
+                    <Label Margin="0,0,10,0" HorizontalTextAlignment="End" x:Name="sum" Text="Binding" FontAttributes="Bold" VerticalTextAlignment="Center" TextColor="MediumVioletRed" FontSize="18" Grid.Row="0" Grid.Column="1"/>
+                </Grid>
+            </Frame>
+            <Button Text="Thanh toán" BackgroundColor="MediumVioletRed" TextColor="Azure" CornerRadius="30" Margin="80,15,80,15" />
+        
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

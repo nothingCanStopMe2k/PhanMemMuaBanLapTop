@@ -46,5 +46,10 @@ namespace BuyLaptopApp.Views
 
             
         }
+
+        private Task DisplayAlert(string v, List<KhachHang> khs)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

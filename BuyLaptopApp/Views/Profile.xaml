@@ -4,52 +4,102 @@
              x:Class="BuyLaptopApp.Views.Profile">
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="Thông tin cá nhân:"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
-            <ListView x:Name="info" Margin="20" HeightRequest="250" RowHeight="100">
+            <Image Source="profile.jpg" Aspect="AspectFill" HeightRequest="300"/>
+     
+            <ListView x:Name="info" Margin="0,-150,0,0" RowHeight="250">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
-                            <Grid  Padding="0" Margin="20, 0, 0, 20">
-                                <Grid.RowDefinitions>
-                                    <RowDefinition Height="Auto"/>
-                                </Grid.RowDefinitions>
-                                <Grid.ColumnDefinitions>
-                                    <ColumnDefinition Width="*"/>
-                                    <ColumnDefinition Width="*"/>
-                                </Grid.ColumnDefinitions>
-                                <Label Text="{Binding SODT}" Grid.Row="0" Grid.Column="0"/>
-                                <Label Text="{Binding HOTEN}" Grid.Row="0" Grid.Column="1"/>
-                            </Grid>
+                            <StackLayout>
+                                <Frame HasShadow="False" CornerRadius="50"  VerticalOptions="FillAndExpand">
+                                    <Grid RowDefinitions="Auto, Auto, Auto,Auto, Auto" ColumnDefinitions="*,*,*">
+                                        <Button Grid.Row="0" Grid.Column="2" HeightRequest="48" WidthRequest="48" CornerRadius="24" ImageSource="icon_phone.png" BackgroundColor="LightBlue" VerticalOptions="Start" HorizontalOptions="End" Margin="0, 0, 0 ,0"/>
+                                        <Label Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Text="{Binding HOTEN}" FontSize="25" FontAttributes="Bold" Padding="20,10,0,0"/>
+                                        <Label Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" Text="{Binding SODT}" TextColor="#ccc" Padding="20,10,0,0"/>
+                                        <Label Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" Text="Địa chỉ: abcxyzxxxxxxnxx" TextColor="#ccc" Padding="20,10,0,0"/>
+                                        <Grid Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2" Padding="20,10,0,0">
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="Auto"/>
+                                                <ColumnDefinition Width="Auto"/>
+                                            </Grid.ColumnDefinitions>
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition/>
+                                            </Grid.RowDefinitions>
+                                            <Image BackgroundColor="Transparent" Grid.Column="0" Grid.Row="0" Source="icon_heart_nofill.png" VerticalOptions="Center"/>
+                                            <Label  Grid.Column="1" Grid.Row="0" Text="Ưa thích" VerticalTextAlignment="Center" HorizontalTextAlignment="Center"/>
+                                        </Grid>
+                                        <Grid Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="2" Padding="20,10,0,0">
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="Auto"/>
+                                                <ColumnDefinition Width="Auto"/>
+                                            </Grid.ColumnDefinitions>
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition/>
+                                            </Grid.RowDefinitions>
+                                            <Image  BackgroundColor="Transparent" Grid.Column="0" Grid.Row="0" Source="icon_tick.png" VerticalOptions="Center"/>
+                                            <Label  Grid.Column="1" Grid.Row="0" Text="Điểm tích lũy" VerticalTextAlignment="Center" HorizontalTextAlignment="Center"/>
+                                        </Grid>
+
+                                    </Grid>
+                                </Frame>
+                            </StackLayout>
+                            
                         </ViewCell>
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>
 
-            <Label Text="Hóa đơn của bạn:"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
-            <ListView x:Name="lsthd" Margin="20" HeightRequest="250" RowHeight="100">
-                <ListView.ItemTemplate>
-                    <DataTemplate>
-                        <ViewCell>
-                            <Grid  Padding="0" Margin="20, 0, 0, 20">
-                                <Grid.RowDefinitions>
-                                    <RowDefinition Height="Auto"/>
-                                </Grid.RowDefinitions>
-                                <Grid.ColumnDefinitions>
-                                    <ColumnDefinition Width="*"/>
-                                    <ColumnDefinition Width="*"/>
-                                </Grid.ColumnDefinitions>
-                                <Label Text="{Binding SOHD}" Grid.Row="0" Grid.Column="0"/>
-                                <Label Text="{Binding TRIGIA}" Grid.Row="0" Grid.Column="1"/>
-                            </Grid>
-                        </ViewCell>
-                    </DataTemplate>
-                </ListView.ItemTemplate>
-            </ListView>
-            <Button x:Name="btnDangXuat" Text="Đăng Xuất" Clicked="btnDangXuat_Clicked"/>
+            <StackLayout BackgroundColor="#fee">
+                <Label Text="Hóa đơn của bạn:" FontSize="20" HorizontalTextAlignment="Center" Margin="20"/>
+                <ListView x:Name="lsthd" HeightRequest="100" RowHeight="50">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <Grid  Padding="0">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="Auto"/>
+                                    </Grid.RowDefinitions>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="2*"/>
+                                    </Grid.ColumnDefinitions>
+                                    <Label Grid.Column="0" Grid.Row="0">
+                                        <Label.FormattedText>
+                                            <FormattedString>
+                                                <Span Text="Số hóa đơn: "/>
+                                                <Span Text="{Binding SOHD}"  FontAttributes="Bold" />
+                                            </FormattedString>
+                                        </Label.FormattedText>
+                                    </Label>
+                                    <Label Grid.Column="1" Grid.Row="0" HorizontalTextAlignment="Center">
+                                        <Label.FormattedText>
+                                            <FormattedString>
+                                                <Span Text="Trị giá: "/>
+                                                <Span Text="{Binding TRIGIA}" FontAttributes="Bold" />
+                                                <Span Text="vnd" FontAttributes="Bold" />
+                                            </FormattedString>
+                                        </Label.FormattedText>
+                                    </Label>
+
+                                </Grid>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </StackLayout>
+            <Grid Margin="20"  VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" Padding="0,0,0,0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Image HeightRequest="48" WidthRequest="48" BackgroundColor="Transparent" Source="icon_logout.png" Grid.Column="0" Grid.Row="0" VerticalOptions="Center"/>
+                <Button x:Name="btnDangXuat" Clicked="btnDangXuat_Clicked" CornerRadius="20" Text="Đăng xuất" Grid.Column="1" Grid.Row="0" VerticalOptions="Center" HorizontalOptions="Center" BackgroundColor="MediumVioletRed" TextColor="Azure"/>
+            </Grid>
+
+         
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
