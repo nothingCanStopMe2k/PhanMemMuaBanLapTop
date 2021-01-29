@@ -20,10 +20,10 @@ namespace BuyLaptopApp.Views
             InitializeComponent();
         }
 
-        public Login(string Ten, string Email, string MatKhau)
+        public Login(string Ten, string Sdt, string MatKhau)
         {
             InitializeComponent();
-            txtSdt.Text = Email;
+            txtSdt.Text = Sdt;
             txtMatKhau.Text = MatKhau;
             TenNguoiDung = Ten;
         }
@@ -45,11 +45,6 @@ namespace BuyLaptopApp.Views
             }
 
             
-        }
-
-        private Task DisplayAlert(string v, List<KhachHang> khs)
-        {
-            throw new NotImplementedException();
         }
     }
 }
