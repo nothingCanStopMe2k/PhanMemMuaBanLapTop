@@ -4,9 +4,52 @@
              x:Class="BuyLaptopApp.Views.Profile">
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="Profile"
+            <Label Text="Thông tin cá nhân:"
                 VerticalOptions="CenterAndExpand" 
                 HorizontalOptions="CenterAndExpand" />
+            <ListView x:Name="info" Margin="20" HeightRequest="250" RowHeight="100">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Grid  Padding="0" Margin="20, 0, 0, 20">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto"/>
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+                                <Label Text="{Binding SODT}" Grid.Row="0" Grid.Column="0"/>
+                                <Label Text="{Binding HOTEN}" Grid.Row="0" Grid.Column="1"/>
+                            </Grid>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+
+            <Label Text="Hóa đơn của bạn:"
+                VerticalOptions="CenterAndExpand" 
+                HorizontalOptions="CenterAndExpand" />
+            <ListView x:Name="lsthd" Margin="20" HeightRequest="250" RowHeight="100">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Grid  Padding="0" Margin="20, 0, 0, 20">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto"/>
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+                                <Label Text="{Binding SOHD}" Grid.Row="0" Grid.Column="0"/>
+                                <Label Text="{Binding TRIGIA}" Grid.Row="0" Grid.Column="1"/>
+                            </Grid>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            <Button x:Name="btnDangXuat" Text="Đăng Xuất" Clicked="btnDangXuat_Clicked"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
