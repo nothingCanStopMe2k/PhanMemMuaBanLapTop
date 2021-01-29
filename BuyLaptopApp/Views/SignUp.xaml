@@ -20,7 +20,7 @@
                     </Grid.ColumnDefinitions>
                     <Button x:Name="DangNhapVoiFB" Clicked="DangNhapVoiFB_Clicked" Grid.Row="0" Grid.Column="0" Text="Tiếp tục với Facebook" TextColor="#fff" BackgroundColor="#3B5999" Margin="0,0,0,-5" />
                     <Label Grid.Row="1" Grid.Column="0" Text="HOẶC" TextColor="#fff" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" FontSize="12" FontAttributes="Bold"/>
-                    <Button x:Name="DangKiVoiEmail" Clicked="DangKiVoiEmail_Clicked" Grid.Row="2" Grid.Column="0" Text="Đăng kí với Email" TextColor="#fff" BackgroundColor="#66999A" Margin="0,-5,0,0"  />
+                    <Button x:Name="DangKiVoiEmail" Clicked="DangKiVoiEmail_Clicked" Grid.Row="2" Grid.Column="0" Text="Đăng kí với SDT" TextColor="#fff" BackgroundColor="#66999A" Margin="0,-5,0,0"  />
                 </Grid>
                 <Label Text="Tìm hiểu chính sách của chúng tôi"
                    Opacity="0.8"
