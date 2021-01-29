@@ -32,7 +32,6 @@ namespace BuyLaptopApp.Views
             var kq = await http.GetStringAsync("http://www.qllt.somee.com/api/serviceController/layLT?mansx=" + nsx.MANSX);
             var lts = JsonConvert.DeserializeObject<List<Laptop>>(kq);
 
-            
             lstlt.ItemsSource = lts;
         }
 

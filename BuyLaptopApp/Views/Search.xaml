@@ -4,9 +4,8 @@
              x:Class="BuyLaptopApp.Views.Search">
     <ContentPage.Content>
         <StackLayout>
-            <SearchBar Placeholder="Tìm kiếm" SearchButtonPressed="SearchBar_SearchButtonPressed"/>
-            <ListView RowHeight="100" 
-                          >
+            <SearchBar x:Name="search" Placeholder="Tìm kiếm" SearchButtonPressed="SearchBar_SearchButtonPressed"/>
+            <ListView x:Name="lstTk" RowHeight="100" ItemSelected="lstTk_ItemSelected">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
