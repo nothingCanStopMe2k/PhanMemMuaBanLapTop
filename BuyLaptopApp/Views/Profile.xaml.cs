@@ -21,11 +21,6 @@ namespace BuyLaptopApp.Views
             HienThi();
         }
 
-        private void ToolbarItem_Clicked(object sender, EventArgs e)
-        {
-            Navigation.PushAsync(new Cart());
-        }
-
         private async void HienThi()
         {
             Database db = new Database();
@@ -35,9 +30,10 @@ namespace BuyLaptopApp.Views
             HttpClient http = new HttpClient();
             var kq = await http.GetStringAsync("http://www.qllt.somee.com/api/serviceController/layHD?sodt=" + kh[0].SODT);
             var hds = JsonConvert.DeserializeObject<List<HoaDon>>(kq);
-            lsthd.ItemsSource = hds;
+            lsthd.ItemsSource = hds; 
         }
-        private void BtnDangXuat_Clicked(object sender, EventArgs e)
+
+        private void btnDangXuat_Clicked(object sender, EventArgs e)
         {
             Database db = new Database();
             db.DeleteDatabase();

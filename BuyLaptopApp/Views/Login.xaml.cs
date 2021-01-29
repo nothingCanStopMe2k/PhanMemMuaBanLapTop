@@ -28,9 +28,23 @@ namespace BuyLaptopApp.Views
             TenNguoiDung = Ten;
         }
 
-        private void Button_Clicked(object sender, EventArgs e)
+        private async void Button_Clicked(object sender, EventArgs e)
         {
-            Navigation.PushAsync(new MasterDetailPage1(TenNguoiDung));
+            HttpClient http = new HttpClient();
+            var kq = await http.GetStringAsync("http://www.qllt.somee.com/api/serviceController/dangnhap?sodt=" + txtSdt.Text + "&matkhau=" + txtMatKhau.Text);
+            if(kq != "[{\"Column1\":\"fail\"}]")
+            {
+                Database db = new Database();
+                var khs = JsonConvert.DeserializeObject<List<KhachHang>>(kq);
+                db.Them_Khachhang(khs[0]);
+                await Navigation.PushAsync(new MasterDetailPage1(TenNguoiDung));
+            }
+            else
+            {
+                await DisplayAlert("Thông báo", "Đăng nhập thất bại", "Đồng ý");
+            }
+
+            
         }
     }
 }
