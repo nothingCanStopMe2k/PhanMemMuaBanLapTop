@@ -39,5 +39,10 @@ namespace BuyLaptopApp.Views
             db.DeleteDatabase();
             Navigation.PushAsync(new SignUp());
         }
+
+        private void lsthd_ItemSelected(object sender, SelectedItemChangedEventArgs e)
+        {
+            Navigation.PushAsync(new PayNow());
+        }
     }
 }

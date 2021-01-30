@@ -51,7 +51,7 @@
 
             <StackLayout BackgroundColor="#fee">
                 <Label Text="Hóa đơn của bạn:" FontSize="20" HorizontalTextAlignment="Center" Margin="20"/>
-                <ListView x:Name="lsthd" HeightRequest="100" RowHeight="50">
+                <ListView x:Name="lsthd" HeightRequest="100" RowHeight="50" ItemSelected="lsthd_ItemSelected">
                     <ListView.ItemTemplate>
                         <DataTemplate>
                             <ViewCell>
