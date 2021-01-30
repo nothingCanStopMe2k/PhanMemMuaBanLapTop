@@ -55,7 +55,7 @@
                     <ListView.ItemTemplate>
                         <DataTemplate>
                             <ViewCell>
-                                <Grid  Padding="0">
+                                <Grid  Padding="20,0,20,0">
                                     <Grid.RowDefinitions>
                                         <RowDefinition Height="Auto"/>
                                     </Grid.RowDefinitions>
@@ -71,10 +71,10 @@
                                             </FormattedString>
                                         </Label.FormattedText>
                                     </Label>
-                                    <Label Grid.Column="1" Grid.Row="0" HorizontalTextAlignment="Center">
+                                    <Label Grid.Column="1" Grid.Row="0" HorizontalTextAlignment="End">
                                         <Label.FormattedText>
                                             <FormattedString>
-                                                <Span Text="Trị giá: "/>
+                                                <Span Text="Trị giá: " />
                                                 <Span Text="{Binding TRIGIA}" FontAttributes="Bold" />
                                                 <Span Text="vnd" FontAttributes="Bold" />
                                             </FormattedString>
